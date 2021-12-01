@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
-export class Newsitem extends Component {
-    render() {
-        let { title, description, imgurl, url, author, publish, source} = this.props;
+const Newsitem=(props)=>{
+        let { title, description, imgurl, url, author, publish, source} = props;
         return (
             <div>
                 <div className="card">
-                <span className="position-absolute start-100 translate-middle badge rounded-pill bg-danger" style={{top:"15px",zIndex:"1",left:"84%"}}>
+                <div style={{display:"flex" , position:"absolute",justifyContent:"flex-end",right:"0"}}/>
+                <span className="position-absolute badge rounded-pill bg-danger" style={{top:"10px",zIndex:"1",left:"69%"}}>
                             {source}
                         </span>
                     <img src={imgurl ? imgurl : "https://www.cartoq.com/wp-content/uploads/2021/11/huawei-electric-car-featured.jpg"} className="card-img-top" alt="..." />
@@ -19,7 +19,6 @@ export class Newsitem extends Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Newsitem
